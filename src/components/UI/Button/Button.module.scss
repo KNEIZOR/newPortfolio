@@ -1,0 +1,62 @@
+@use "/src/style/variables";
+
+.buttonWrapper {
+    width: 237px;
+    height: 47px;
+    border: 1px solid;
+    background-color: rgba(0, 0, 0, 0);
+    color: variables.$color-active;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    display: block;
+
+    .buttonInner {
+        width: 0;
+        height: 70px;
+        background-color: variables.$color-active;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        transition: width 0.5s;
+        -webkit-transition: width 0.5s;
+        -moz-transition: width 0.5s;
+        -ms-transition: width 0.5s;
+        -o-transition: width 0.5s;
+    }
+}
+
+.buttonText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    color: variables.$color-active;
+    font-size: 16pt;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.buttonWrapper:hover .buttonInner {
+    width: 237px;
+}
+
+.buttonWrapper:hover .buttonText {
+    color: black;
+}
+
+@media screen and (max-width: 900px) {
+    .buttonWrapper{
+        width: 100%;
+        max-width: 247px;
+
+        max-height: 47px;
+    }
+}

@@ -1,0 +1,134 @@
+@use "variables";
+
+.about__wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 200px;
+    justify-content: space-between;
+
+    .about {
+        margin-left: 90px;
+    }
+}
+
+.about-header {
+    position: relative;
+
+    h2::before {
+        position: absolute;
+        content: "<h2>";
+        font-size: 12pt;
+        color: variables.$color-tag;
+        left: -20px;
+        top: -20px;
+    }
+
+    h2 {
+        color: variables.$color-active;
+        font-size: 32pt;
+    }
+
+    h2::after {
+        content: "</h2>";
+        font-size: 12pt;
+        color: variables.$color-tag;
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+    }
+}
+
+.about-text {
+    position: relative;
+    margin-top: 50px;
+    max-width: 900px;
+
+    p::before {
+        position: absolute;
+        content: "<p>";
+        font-size: 12pt;
+        color: variables.$color-tag;
+        left: -20px;
+        top: -20px;
+    }
+
+    p {
+        color: white;
+        font-size: 16pt;
+        font-weight: bold;
+
+        li {
+            margin-bottom: 20px;
+        }
+    }
+
+    p::after {
+        content: "</p>";
+        font-size: 12pt;
+        color: variables.$color-tag;
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+    }
+}
+
+.about-link {
+    color: variables.$color-active;
+    font-size: 16pt;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.about-link:hover {
+    filter: brightness(50%);
+    -webkit-filter: brightness(50%);
+}
+
+svg {
+    margin-right: 200px;
+    margin-bottom: 100px;
+}
+
+.about-header,
+.about-text {
+    transform: translateY(50px);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+}
+
+.in-view {
+    transform: none;
+    opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+    .about-text {
+        p {
+            font-size: 3vw;
+        }
+    }
+
+    .about__wrapper {
+        .about {
+            margin-left: 20px;
+        }
+    }
+
+    svg {
+        margin-right: 0;
+    }
+
+    .about-header,
+    .about-text {
+        opacity: 1;
+    }
+}

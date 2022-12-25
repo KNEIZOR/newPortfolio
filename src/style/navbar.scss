@@ -1,0 +1,158 @@
+@use "variables";
+
+.navbar {
+    width: 100%;
+    max-width: 130px;
+    height: 100vh;
+    color: variables.$color-title;
+    position: fixed;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+
+}
+
+.header-nav__wrapper {
+    background-color: variables.$background-color;
+    height: 100%;
+    max-height: 340px;
+}
+
+.header-nav {
+    cursor: pointer;
+    background-color: black;
+    height: 100%;
+    max-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header-nav-logo-img {
+        margin-top: 10px;
+        width: 90px;
+        height: 90px;
+    }
+
+    .header-nav-title {
+        font-size: 18pt;
+        font-weight: bold;
+    }
+
+    .header-nav-text {
+        color: variables.$color-text;
+        margin-top: 10px;
+        font-size: 10pt;
+    }
+}
+
+.nav-ul li {
+    text-align: center;
+    padding: 15px;
+    background-color: variables.$background-color;
+    margin: 4px 0;
+    color: variables.$color-text;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.nav-ul li:hover {
+    color: variables.$color-active;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    cursor: pointer;
+}
+
+.nav-footer-links {
+    background-color: variables.$background-color;
+    height: 37vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .nav-footer-ul {
+        display: flex;
+
+        a {
+            font-size: 14pt;
+            margin: 6px;
+            color: variables.$color-text;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -o-transition: 0.5s;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: variables.$color-active;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -o-transition: 0.5s;
+        }
+    }
+}
+
+.menu{
+    display: none;
+}
+
+.close{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .navbar{
+        display: none;
+        max-width: none;
+    }
+
+    .nav-ul li{
+        margin: 0;
+        border-top: 2px solid gray;
+    }
+
+    .close{
+        position: absolute;
+        display: block;
+        top: 10px;
+        right: 30px;
+        border: 0;
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        font-size: 32pt;
+    }
+
+    .menu{
+        display: block;
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        z-index: 100;
+        font-size: 40pt;
+        color: white;
+        
+    }
+
+    .block{
+        display: block;
+    }
+    
+    .none{
+        display: none;
+    }
+}

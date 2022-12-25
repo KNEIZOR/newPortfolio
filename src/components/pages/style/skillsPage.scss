@@ -1,0 +1,130 @@
+@use "/src/style/variables";
+
+.skills__wrapper-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.skills-page {
+    margin-left: 90px;
+    display: flex;
+}
+
+.button-wrapper:hover .button-inner{
+    width: 200px;
+}
+
+.skills-left-page {
+    max-width: 800px;
+    width: 100%;
+
+    .skills-header-page {
+        position: relative;
+
+        h2::before {
+            position: absolute;
+            content: "<h2>";
+            font-size: 12pt;
+            color: variables.$color-tag;
+            left: -20px;
+            top: -20px;
+        }
+
+        h2 {
+            font-size: 60pt;
+            font-weight: bold;
+            color: variables.$color-active;
+        }
+
+        h2::after {
+            content: "</h2>";
+            font-size: 12pt;
+            color: variables.$color-tag;
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+        }
+    }
+
+    .skills-text-page {
+        color: white;
+        position: relative;
+        margin-top: 50px;
+
+        p::before {
+            position: absolute;
+            content: "<p>";
+            font-size: 12pt;
+            color: variables.$color-tag;
+            left: -20px;
+            top: -20px;
+        }
+
+        p {
+            margin-top: 30px;
+            font-size: 16pt;
+        }
+
+        p::after {
+            content: "</p>";
+            font-size: 12pt;
+            color: variables.$color-tag;
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+        }
+
+        a {
+            color: variables.$color-active;
+            transition: .5s;
+            -webkit-transition: .5s;
+            -moz-transition: .5s;
+            -ms-transition: .5s;
+            -o-transition: .5s;
+}
+
+        a:hover {
+            filter: brightness(50%);
+            -webkit-filter: brightness(50%);
+        }
+    }
+}
+
+.skills-right-page {
+    margin-left: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .skills-progress-page {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.skill-progress {
+    margin-top: 30px;
+
+    h2 {
+        color: white;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .skills-page{
+        margin-left: 20px;
+    }
+
+    .skills-left-page{
+        .skills-text-page{
+            p{
+                font-size: 3vw;
+            }
+        }
+    }
+}

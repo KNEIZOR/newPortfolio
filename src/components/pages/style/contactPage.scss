@@ -1,0 +1,135 @@
+@use "/src/style/variables";
+
+.contact-map-page {
+    width: 900px;
+    height: 900px;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.contact-page {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 90px;
+}
+
+.contact-form-page {
+    margin-top: 100px;
+}
+
+.contact-header-page {
+    position: relative;
+
+    h2::before {
+        position: absolute;
+        content: "<h2>";
+        font-size: 12pt;
+        color: variables.$color-tag;
+        left: -20px;
+        top: -20px;
+    }
+
+    h2 {
+        color: variables.$color-active;
+        font-size: 32pt;
+    }
+
+    h2::after {
+        content: "</h2>";
+        font-size: 12pt;
+        color: variables.$color-tag;
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+    }
+}
+
+form {
+    position: relative;
+}
+
+.form__wrapper-page::before {
+    position: absolute;
+    content: "<form>";
+    font-size: 12pt;
+    color: variables.$color-tag;
+    left: -20px;
+    top: -20px;
+}
+
+.form__wrapper-page::after {
+    content: "</form>";
+    font-size: 12pt;
+    color: variables.$color-tag;
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+}
+
+.form-inputs-page {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+
+    .input-top-page {
+        width: 100%;
+        display: flex;
+
+        input:nth-child(2) {
+            margin-left: 10px;
+        }
+    }
+
+    input,
+    textarea {
+        margin-top: 10px;
+    }
+
+    textarea {
+        width: 100%;
+        background-color: #3f3f3f;
+        border: 0;
+        outline: none;
+        font-size: 24pt;
+        padding: 10px 0 10px 30px;
+        color: rgb(173, 173, 173);
+        resize: vertical;
+    }
+
+    textarea:focus {
+        border-bottom: 2px solid variables.$color-active;
+    }
+}
+
+.form-btn-page {
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    right: 50px;
+}
+
+@media (max-width: 1050px) {
+    .contact-map-page {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 780px) {
+    .form-inputs-page {
+        .input-top-page {
+            flex-direction: column;
+
+            input:nth-child(2) {
+                margin-left: 0;
+            }
+        }
+    }
+
+}

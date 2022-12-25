@@ -1,0 +1,114 @@
+@use "/src/style/variables";
+
+.jobs__wrapper-page {
+    position: relative;
+
+    .jobs-page {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.job-page {
+    max-width: calc(100% / 5);
+    max-height: calc(100vh / 3);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.job-content-page {
+    max-width: 360px;
+    max-height: calc(100vh / 3);
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    overflow: hidden;
+    filter: brightness(40%);
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-filter: brightness(40%);
+}
+
+.job-logo-page {
+    max-width: 360px;
+    max-height: calc(100vh / 3);
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.job-content-page:hover .job-logo {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.job-content-page:hover {
+    filter: brightness(100%);
+    -webkit-filter: brightness(100%);
+}
+
+.job-button {
+    cursor: pointer;
+    border: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    max-width: 120px;
+    max-height: 120px;
+    z-index: 100;
+    opacity: 0;
+    background-color: variables.$color-active;
+    color: black;
+    font-size: 1em;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.job-content:hover .job-button {
+    opacity: 1;
+    width: 80%;
+    height: 80%;
+}
+
+.background-text {
+    position: absolute;
+    top: -170px;
+    right: 0;
+    font-size: 25em;
+    color: variables.$color-tag;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+    .job-page{
+        max-width: calc(100vw / 3);
+    }
+
+    .job-content-page{
+        filter: brightness(100%);
+        -webkit-filter: brightness(100%);
+}
+}
